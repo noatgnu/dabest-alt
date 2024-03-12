@@ -7,6 +7,14 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
+pandas = "^2.2.1"
+numpy = "^1.26.4"
+matplotlib = "^3.8.3"
+seaborn = "^0.13.2"
+scipy = "^1.12.0"
+statsmodels = "^0.14.1"
+lqrt = "^0.3.3"
+fastcore = "^1.5.29"
 
 
 [build-system]

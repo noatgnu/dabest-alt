@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "dabest-alt"
+name = "dabest"
 version = "0.1.0"
 description = ""
 authors = ["Toan Phung <toan.phung@proteo.info>"]

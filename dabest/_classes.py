@@ -297,10 +297,10 @@ class Dabest(object):
         # a pandas Categorical. Now we check for this and act appropriately.
         if isinstance(plot_data[self.__xvar].dtype, 
                       pd.CategoricalDtype) is True:
-            plot_data[self.__xvar].cat.remove_unused_categories(inplace=True)
-            plot_data[self.__xvar].cat.reorder_categories(all_plot_groups, 
-                                                          ordered=True, 
-                                                          inplace=True)
+            plot_data[self.__xvar] = plot_data[self.__xvar].cat.remove_unused_categories()
+            print(all_plot_groups)
+            plot_data[self.__xvar] = plot_data[self.__xvar].cat.reorder_categories(all_plot_groups,
+                                                          ordered=True)
         else:
             plot_data.loc[:, self.__xvar] = pd.Categorical(plot_data[self.__xvar],
                                                categories=all_plot_groups,

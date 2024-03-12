@@ -205,6 +205,7 @@ def EffectSizeDataFramePlotter(EffectSizeDataFrame, **plot_kwargs):
 
     # Handle the color palette.
     names = color_groups
+
     n_groups = len(color_groups)
     custom_pal = plot_kwargs["custom_palette"]
     swarm_desat = plot_kwargs["swarm_desat"]
@@ -247,13 +248,13 @@ def EffectSizeDataFramePlotter(EffectSizeDataFrame, **plot_kwargs):
 
     if custom_pal is None and color_col is None:
         swarm_colors = [sns.desaturate(c, swarm_desat) for c in unsat_colors]
-        plot_palette_raw = dict(zip(names.categories, swarm_colors))
+        plot_palette_raw = dict(zip(names, swarm_colors))
 
         bar_color = [sns.desaturate(c, bar_desat) for c in unsat_colors]
-        plot_palette_bar = dict(zip(names.categories, bar_color))
+        plot_palette_bar = dict(zip(names, bar_color))
 
         contrast_colors = [sns.desaturate(c, contrast_desat) for c in unsat_colors]
-        plot_palette_contrast = dict(zip(names.categories, contrast_colors))
+        plot_palette_contrast = dict(zip(names, contrast_colors))
 
         # For Sankey Diagram plot, no need to worry about the color, each bar will have the same two colors
         # default color palette will be set to "hls"

@@ -299,6 +299,7 @@ class Dabest(object):
                       pd.CategoricalDtype) is True:
             plot_data[self.__xvar] = plot_data[self.__xvar].cat.remove_unused_categories()
             print(all_plot_groups)
+            print(plot_data[self.__xvar].cat.categories)
             plot_data[self.__xvar] = plot_data[self.__xvar].cat.reorder_categories(all_plot_groups,
                                                           ordered=True)
         else:
